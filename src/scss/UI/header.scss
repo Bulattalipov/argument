@@ -1,5 +1,9 @@
 .header {
-  padding-top: 2rem;
+  padding-top: 6.4rem;
+
+  @include mq(sm) {
+    padding-top: 5.6rem;
+  }
 
   .site-container {
     position: relative;
@@ -8,13 +12,26 @@
     justify-content: space-between;
   }
 
-  a {
-    display: block;
+  &__logo {
+    display: inline-block;
     flex-shrink: 0;
 
-    img {
-      max-width: 6rem;
-      height: 3.3rem;
+    @include mq(sm) {
+      margin: 0 auto;
     }
   }
+
+  &__logo-img {
+    max-width: 31.1rem;
+    height: 7.4rem;
+    object-fit: contain;
+
+    @include mq(xl) {
+      max-width: 25rem;
+    }
+
+    @include mq(xxs) {
+      max-width: 20rem;
+    }
+}
 }

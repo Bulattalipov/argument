@@ -1,0 +1,129 @@
+.possibilities {
+    position: relative;
+    margin-bottom: 26rem;
+
+    @include mq(xl) {
+        margin-bottom: 22rem;
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        width: 76.1rem;
+        height: 76.1rem;
+        border-radius: 50%;
+        opacity: 0.3;
+        background: #315166;
+        filter: blur(15rem);
+        background-size: contain;
+        background-repeat: no-repeat;
+        content: '';
+        z-index: -1;
+
+        @include mq(md) {
+            display: none;
+        }
+    }
+
+    &::before {
+        top: -25rem;
+        right: -25rem;
+    }
+
+    &::after {
+        bottom: -25rem;
+        left: -20rem;
+    }
+
+    &__title {
+        margin-bottom: 2.4rem;
+
+        @include mq(xs) {
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    &__desc {
+        max-width: 109rem;
+        font: var(--font-light-40);
+        color: rgba(255, 255, 255, 0.60);
+        margin-bottom: 3.2rem;
+
+        @include mq(sm) {
+            margin-bottom: 2.4rem;
+        }
+
+        b {
+            color: var(--color-brand);
+        }
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 9.6rem 2.4rem;
+        margin-top: 12rem;
+
+        @include mq(xl) {
+            margin-top: 10rem;
+            gap: 7.6rem 2.4rem;
+        }
+
+        @include mq(sm) {
+            gap: 5.6rem 4rem;
+        }
+
+        @include mq(custom, max, 700) {
+            margin-top: 8.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        grid-column: span 6;
+        margin-right: 11.1rem;
+
+        @include mq(xl) {
+            margin-right: 6rem;
+        }
+
+        @include mq(sm) {
+            margin-right: 0;
+        }
+
+        &:nth-child(even) {
+            @include mq(md) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__item-icon {
+        width: 6.5rem;
+        height: 6.5rem;
+        object-fit: contain;
+        margin-bottom: 3.2rem;
+
+        @include mq(sm) {
+            width: 4.8rem;
+            height: 4.8rem;
+            margin-bottom: 2.4rem;
+        }
+    }
+
+    &__item-title {
+        font: var(--font-regular-40);
+        color: var(--color-white);
+        margin-bottom: 2.4rem;
+
+        @include mq(sm) {
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    &__item-text {
+        font: var(--font-regular-18);
+        color: rgba(255, 255, 255, 0.60);
+    }
+}

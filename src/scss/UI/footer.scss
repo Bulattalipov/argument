@@ -1,3 +1,87 @@
 .footer {
   display: block;
+
+  &__logo {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  &__logo-img {
+      max-width: 31.1rem;
+      height: 7.4rem;
+      object-fit: contain;
+
+      @include mq(xl) {
+        max-width: 25rem;
+      }
+
+      @include mq(xxs) {
+        max-width: 20rem;
+      }
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2.4rem;
+    margin-top: 4rem;
+    margin-bottom: 26rem;
+
+    @include mq(xl) {
+      margin-bottom: 19rem;
+    }
+
+    @include mq(md) {
+      margin-top: 3.2rem;
+      gap: 1.4rem;
+      margin-bottom: 16rem;
+    }
+
+    @include mq(sm) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include mq(xxs) {
+      margin-bottom: 14rem;
+    }
+  }
+
+  &__inner-box {
+    font: 400 3.2rem/1.5 "Inter";
+    color: rgba(255, 255, 255, 0.4);
+
+    @include mq(xl) {
+      font: 400 2.4rem/1.5 "Inter";
+    }
+
+    @include mq(xl) {
+      font: 400 2rem/1.5 "Inter";
+    }
+
+    @include mq(xxs) {
+      font: 400 1.6rem/1.5 "Inter";
+    }
+
+
+    &:first-child {
+      grid-column: span 5;
+
+      @include mq(md) {
+        grid-column: span 6;
+      }
+    }
+
+    &:nth-child(2) {
+      grid-column: span 2;
+
+      @include mq(md) {
+        grid-column: span 1;
+      }
+    }
+
+    &:nth-child(3) {
+      grid-column: span 5;
+    }
+  }
 }

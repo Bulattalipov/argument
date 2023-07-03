@@ -1,0 +1,24 @@
+.mobile-markets {
+    display: flex;
+
+    &__link {
+        display: block;
+        max-width: 22.2rem;
+
+        @include mq(xl) {
+            max-width: 18rem;
+        }
+
+        @include mq(md) {
+            max-width: 16rem;
+        }
+
+        &:first-child {
+            margin-right: 2.4rem;
+
+            @include mq(md) {
+                margin-right: 1.2rem;
+            }
+        }
+    }
+}
