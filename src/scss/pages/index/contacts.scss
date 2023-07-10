@@ -1,0 +1,121 @@
+.contacts {
+    position: relative;
+    margin-bottom: 24.5rem;
+
+    @include mq(xl) {
+        margin-bottom: 19rem;
+    }
+
+    @include mq(md) {
+        margin-bottom: 16rem;
+    }
+
+    @include mq(sm) {
+        margin-bottom: 12rem;
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 2.4rem;
+        align-items: flex-end;
+        margin-bottom: 14.2rem;
+
+        @include mq(md) {
+            display: flex;
+        }
+
+        @include mq(sm) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 8rem;
+        }
+    }
+
+    &__app {
+        grid-column: span 7;
+
+        @include mq(md) {
+            margin-right: 3rem;
+        }
+
+        @include mq(sm) {
+            margin-right: 0;
+            margin-bottom: 8rem;
+        }
+    }
+
+    &__app-img {
+        width: 41.6rem;
+        height: 32rem;
+        object-fit: cover;
+        margin-bottom: 3.2rem;
+
+        @include mq(lg) {
+            width: 38rem;
+            height: 30rem;
+        }
+
+        @include mq(xs) {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+
+    &__app-title {
+        font: var(--font-bold-40);
+        margin-bottom: 2.4rem;
+        color: var(--color-white);
+    }
+
+    &__cont {
+        grid-column: span 5;
+
+        @include mq(sm) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        @include mq(xs) {
+            width: 100%;
+            align-items: flex-start;
+            margin-left: 0;
+        }
+    }
+
+    &__cont-title {
+        max-width: 36.4rem;
+        font: var(--font-bold-40);
+        color: var(--color-white);
+        margin-bottom: 2.4rem;
+    }
+
+    &__cont-link {
+        display: block;
+        color: rgba(255, 255, 255, 0.40);
+        font: var(--font-regular-32);
+    }
+    
+    &__cont-btn {
+        margin-top: 2.4rem;
+    }
+
+    &__social {
+
+    }
+
+    &__social-text {
+        max-width: 63.2rem;
+        font: var(--font-regular-40);
+        margin-bottom: 4.5rem;
+        color: var(--color-white);
+
+        @include mq(sm) {
+            margin-bottom: 3.2rem;
+        }
+    }
+}

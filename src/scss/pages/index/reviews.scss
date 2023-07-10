@@ -1,0 +1,127 @@
+.reviews {
+    position: relative;
+    border-radius: 4rem;
+    background-color: #ACB0B4;
+    padding: 6.4rem 4.8rem;
+    margin: 0 -4.8rem;
+    margin-bottom: 26rem;
+    overflow: hidden;
+
+    &::before {
+        position: absolute;
+        bottom: -40rem;
+        right: -30rem;
+        width: 76.1rem;
+        height: 76.1rem;
+        border-radius: 50%;
+        opacity: 0.3;
+        background: #16A0FC;
+        filter: blur(15rem);
+        background-size: contain;
+        background-repeat: no-repeat;
+        content: "";
+        z-index: 0;
+
+        @include mq(custom, max, 1028) {
+            display: none;
+        }
+    }
+
+    @include mq(custom, max, 1435) {
+        padding: 4.4rem 1.2rem;
+        margin: 0 -1.2rem 26rem;
+    }
+
+    @include mq(xl) {
+        margin-bottom: 22rem;
+    }
+
+    @include mq(md) {
+        padding: 2.4rem 1.2rem;
+        border-radius: 1rem;
+    }
+
+    @include mq(sm) {
+        margin-bottom: 16rem;
+    }
+
+    &__title {
+        color: #121619;
+        margin-bottom: 4.8rem;
+
+        @include mq(md) {
+            margin-bottom: 3.8rem;
+        }
+
+        @include mq(sm) {
+            margin-bottom: 2.4rem;
+        }
+    }
+
+    &__items {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 5.6rem 2.4rem;
+        z-index: 1;
+
+        @include mq(xl) {
+            gap: 4.6rem 2.4rem;
+        }
+
+        @include mq(md) {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+
+    &__item {
+        color: #121619;
+
+        @include mq(md) {
+            margin-bottom: 4rem;
+        }
+
+        &:first-child {
+            grid-column: span 8;
+
+            @include mq(xl) {
+                grid-column: span 7;
+            }
+        }
+
+        &:nth-child(2) {
+            grid-column: span 4;
+
+            @include mq(xl) {
+                grid-column: span 5;
+            }
+
+            .reviews__item-text {
+                font: var(--font-medium-27);
+            }
+        }
+
+        &:nth-child(3) {
+            grid-column: span 5;
+        }
+
+        &:nth-child(4) {
+            grid-column: span 7;
+
+            @include mq(md) {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    &__item-text {
+        font: var(--font-regular-40);
+        margin-bottom: 2.4rem;
+
+        @include mq(sm) {
+            margin-bottom: 1.6rem;
+        }
+    }
+}

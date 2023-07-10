@@ -1,7 +1,29 @@
-.modal__container(data-target="modal")
-  .modal__content
-    button.button-reset.modal__close-btn.modal-close(type="button")
-      span
-      span
-    .modal__legend
-      | Поздравляем вы открыли модалку!
+.modal__container(data-target="callback-modal")
+  button.button-reset.modal__close-btn.modal-close(type="button")
+    span
+    span
+  .modal__text-content
+    h2.modal__heading Записаться на консультацию
+    form.modal__form(action="/" method="POST")
+      .modal__form-fields
+        .modal__form-field
+          label.modal__form-label(for="name" method="POST") Имя
+          .modal__form-input-wrapper
+            input.modal__form-input(type="text" name="name" required="" id="name")
+        .modal__form-field
+          label.modal__form-label(for="phone") Телефон
+          .modal__form-input-wrapper
+            input.modal__form-input(type="tel" name="phone" required="" id="phone")
+      button.modal__form-submit(type="submit") Записаться на консультацию
+  .modal__image-wrapper
+    img.modal__image(src="assets/images/modal-image.webp" alt="")
+
+.modal__container(data-target="success-modal")
+  button.button-reset.modal__close-btn.modal-close(type="button")
+    span
+    span
+  .modal__text-content
+    .modal__heading Записаться на консультацию
+    .modal__text Мы свяжемся с вами<br> в ближайшее время
+  .modal__image-wrapper
+    img.modal__image(src="assets/images/modal-image.webp" alt="")
