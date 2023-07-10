@@ -6,7 +6,7 @@ import initModal from './modules/initModal';
 import sliderVideos from './modules/sliderVideos';
 
 documenReady(() => {
-  window.___YOUR_PROJECT___API = { };
+  window.argument__API = { };
 
   lazyIMages();
   initModal();

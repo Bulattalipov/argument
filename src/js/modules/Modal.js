@@ -3,6 +3,8 @@ export class Modal {
     let defaultOptions = {
       isOpen: () => { },
       isClose: () => { },
+      beforeOpen: () => {},
+      afterClose: () => {}
     }
     this.options = Object.assign(defaultOptions, options);
     this.modals = Array.from(document.querySelectorAll('.modal'));
@@ -26,7 +28,7 @@ export class Modal {
 
   events() {
     if (this.modals.length) {
-      document.addEventListener('click', function (e) {
+      document.addEventListener('mousedown', function (e) {
         const clickedElement = e.target.closest('[data-path]');
         if (clickedElement) {
           let target = clickedElement.dataset.path;
@@ -69,7 +71,7 @@ export class Modal {
     }
   }
 
-  onOpen(element, anima, sped) {
+  onOpen(element, anima, sped, data = null) {
     let target = element;
     let animation = anima;
     let speed = sped;
@@ -77,6 +79,7 @@ export class Modal {
     this.speed = speed ? parseInt(speed) : 300;
     this.modalContainer = document.querySelector(`[data-target="${target}"]`);
     this.open(this.modalContainer.closest(".modal"));
+    this.options.beforeOpen(this, data);
   }
 
   open(thisModal) {
@@ -110,6 +113,8 @@ export class Modal {
       this.options.isClose(this);
       this.isOpen = false;
       this.focusTrap();
+
+      document.querySelector("body").removeAttribute('style');
     }
   }
 
@@ -139,7 +144,7 @@ export class Modal {
   }
 
   disableScroll() {
-    let pagePosition = window.scrollY;
+    let pagePosition = window.pageYOffset;
     this.lockPadding();
     document.body.classList.add('disable-scroll');
     document.body.dataset.position = pagePosition;

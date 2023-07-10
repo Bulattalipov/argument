@@ -8,5 +8,7 @@ export default () => {
     },
   });
 
-  // window.medikamarket_API.modal = modal;
+  window.argument__API.modal = modal;
+  // window.argument__API.modal.onOpen("success-modal");
+  // window.argument__API.modal.close("success-modal");
 };
